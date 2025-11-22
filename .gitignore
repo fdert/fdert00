@@ -31,8 +31,12 @@ ts-debug.log*
 # vercel
 .vercel
 
+# netlify
+.netlify
+
 # prisma
 /lib/generated/prisma
 *.db
 *.db-journal
 /prisma/migrations
+

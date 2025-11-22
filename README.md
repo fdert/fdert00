@@ -1,40 +1,124 @@
-# Employee Management System
+# نظام إدارة الموظفين - Employee Management System
 
-A modern, responsive web application for managing employee records.
+نظام ويب حديث ومتجاوب لإدارة سجلات الموظفين، مبني باستخدام Next.js و Prisma.
 
-## Features
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start)
 
-- **Dashboard**: Overview of key metrics (Total Employees, New Hires, etc.).
-- **Employee Management**: List, search, and filter employees.
-- **Reports**: Access and download reports.
-- **Authentication**: Secure login page (UI only for now).
-- **Responsive Design**: Works on desktop and mobile.
+## ✨ المميزات
 
-## Tech Stack
+- **لوحة التحكم**: عرض شامل للمقاييس الرئيسية (إجمالي الموظفين، الموظفين الجدد، إلخ)
+- **إدارة الموظفين**: عرض، بحث، وتصفية الموظفين
+- **التقارير**: الوصول إلى التقارير وتحميلها
+- **المصادقة**: صفحة تسجيل دخول آمنة
+- **تصميم متجاوب**: يعمل على سطح المكتب والهاتف المحمول
+- **قاعدة بيانات**: تخزين دائم باستخدام Prisma ORM
 
-- **Framework**: Next.js 14 (React)
+## 🛠️ التقنيات المستخدمة
+
+- **Framework**: Next.js 14 (App Router)
+- **Database ORM**: Prisma
 - **Styling**: Tailwind CSS
 - **Icons**: Lucide React
 - **Language**: TypeScript
+- **Hosting**: Netlify (جاهز للنشر)
 
-## Getting Started
+## 🚀 البدء السريع
 
-1.  Install dependencies:
-    ```bash
-    npm install
-    ```
+### التطوير المحلي
 
-2.  Run the development server:
-    ```bash
-    npm run dev
-    ```
+1. **تثبيت التبعيات**:
+   ```bash
+   npm install
+   ```
 
-3.  Open [http://localhost:3000](http://localhost:3000) with your browser.
+2. **إعداد قاعدة البيانات**:
+   ```bash
+   npx prisma db push
+   ```
 
-## Project Structure
+3. **تشغيل السيرفر**:
+   ```bash
+   npm run dev
+   ```
 
-- `app/`: Application source code (Next.js App Router).
-  - `(auth)/`: Authentication routes (Login).
-  - `(dashboard)/`: Main application routes (Dashboard, Employees, Reports).
-- `components/`: Reusable UI components.
-- `lib/`: Utility functions and mock data.
+4. افتح [http://localhost:3000](http://localhost:3000) في المتصفح.
+
+### النشر على Netlify
+
+**للنشر السريع، راجع**: [`QUICK_START.md`](./QUICK_START.md)
+
+**للدليل الكامل، راجع**: [`DEPLOYMENT.md`](./DEPLOYMENT.md)
+
+#### خطوات سريعة:
+1. أنشئ قاعدة بيانات على [Neon](https://neon.tech) (مجاني)
+2. ارفع المشروع إلى GitHub
+3. اربط مع [Netlify](https://netlify.com)
+4. أضف `DATABASE_URL` في متغيرات البيئة
+5. انشر! 🎉
+
+## 📁 هيكل المشروع
+
+```
+fdert/
+├── app/                      # Next.js App Router
+│   ├── (auth)/              # صفحات المصادقة
+│   ├── (dashboard)/         # صفحات التطبيق الرئيسية
+│   └── api/                 # API Routes
+├── components/              # مكونات UI قابلة لإعادة الاستخدام
+├── lib/                     # دوال مساعدة
+├── prisma/                  # مخطط قاعدة البيانات
+│   └── schema.prisma       # نموذج البيانات
+├── public/                  # ملفات ثابتة
+├── netlify.toml            # تكوين Netlify
+└── next.config.js          # تكوين Next.js
+```
+
+## 📚 الوثائق
+
+- **[QUICK_START.md](./QUICK_START.md)** - البدء السريع (15 دقيقة)
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - دليل النشر الكامل
+- **[NETLIFY_ENV.md](./NETLIFY_ENV.md)** - إعداد متغيرات البيئة
+- **[NETLIFY_SETUP_COMPLETE.md](./NETLIFY_SETUP_COMPLETE.md)** - ملخص التجهيزات
+
+## 🗄️ قاعدة البيانات
+
+### التطوير المحلي
+يستخدم SQLite (ملف محلي):
+```env
+DATABASE_URL="file:./dev.db"
+```
+
+### الإنتاج (Netlify)
+يوصى باستخدام PostgreSQL:
+- [Neon](https://neon.tech) - مجاني ⭐
+- [Supabase](https://supabase.com) - مجاني
+- [PlanetScale](https://planetscale.com) - مجاني
+- [Railway](https://railway.app) - مجاني
+
+## 🔧 الأوامر المتاحة
+
+```bash
+npm run dev          # تشغيل السيرفر المحلي
+npm run build        # بناء للإنتاج
+npm start            # تشغيل النسخة المبنية
+npm run lint         # فحص الكود
+npx prisma studio    # فتح Prisma Studio (واجهة قاعدة البيانات)
+npx prisma db push   # تطبيق التغييرات على قاعدة البيانات
+```
+
+## 🌐 Demo
+
+قريباً...
+
+## 📄 الترخيص
+
+هذا المشروع مفتوح المصدر.
+
+## 🤝 المساهمة
+
+المساهمات مرحب بها! لا تتردد في فتح Issue أو Pull Request.
+
+---
+
+**تم تجهيز المشروع بالكامل للنشر على Netlify! 🚀**
+
