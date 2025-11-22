@@ -6,7 +6,15 @@
 
 اختر أحد الخيارات التالية:
 
-#### الخيار الأسهل: Neon (موصى به) ⭐
+#### الخيار الأسهل: PlanetScale - MySQL (موصى به) ⭐
+1. اذهب إلى: https://planetscale.com
+2. سجل دخول بحساب GitHub
+3. اضغط "Create database"
+4. اختر اسماً: `employee-management`
+5. انسخ Connection String
+6. **ملاحظة**: Schema محدّث بالفعل لاستخدام MySQL! ✅
+
+#### الخيار البديل: Neon - PostgreSQL
 1. اذهب إلى: https://neon.tech
 2. سجل دخول بحساب GitHub
 3. اضغط "Create Project"
@@ -14,8 +22,9 @@
 5. حدّث `prisma/schema.prisma`:
    ```prisma
    datasource db {
-     provider = "postgresql"  // غيّر من sqlite
+     provider = "postgresql"  // غيّر من mysql
      url      = env("DATABASE_URL")
+     // احذف relationMode = "prisma"
    }
    ```
 
@@ -92,8 +101,8 @@ npm start
 
 قبل النشر، تأكد من:
 
-- [ ] قاعدة بيانات جاهزة (Neon أو غيرها)
-- [ ] تم تحديث `schema.prisma` إلى PostgreSQL
+- [ ] قاعدة بيانات جاهزة (PlanetScale أو Neon)
+- [ ] Schema محدّث (MySQL مُعد بالفعل ✅)
 - [ ] تم رفع الكود إلى GitHub
 - [ ] تم ربط المستودع مع Netlify
 - [ ] تم إضافة `DATABASE_URL` في Netlify
