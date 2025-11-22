@@ -2,6 +2,10 @@ import React from 'react';
 import { Users, UserPlus, Briefcase, TrendingUp } from 'lucide-react';
 import { prisma } from '@/lib/prisma';
 
+// Force dynamic rendering to avoid build-time database access
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ');
 }
@@ -160,8 +164,8 @@ export default async function DashboardPage() {
                                             <div className="flex items-center justify-between">
                                                 <h3 className="text-sm font-medium">{employee.firstName} {employee.lastName}</h3>
                                                 <span className={`inline-flex rounded-full px-2 text-xs font-semibold leading-5 ${employee.status === 'Active' ? 'bg-green-100 text-green-800' :
-                                                        employee.status === 'On Leave' ? 'bg-yellow-100 text-yellow-800' :
-                                                            'bg-red-100 text-red-800'
+                                                    employee.status === 'On Leave' ? 'bg-yellow-100 text-yellow-800' :
+                                                        'bg-red-100 text-red-800'
                                                     }`}>
                                                     {employee.status}
                                                 </span>
